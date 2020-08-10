@@ -12,8 +12,10 @@
 
 # Techniques
 - [ ] https://www.tensorflow.org/tutorials
+- [ ] https://scala.monster/welcome-zio/
+
 
 # Interested
 - https://architectelevator.com/
 - https://www.thoughtworks.com/radar
-- 
+- https://blog.webiny.com/
