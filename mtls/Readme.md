@@ -1,4 +1,9 @@
 # Overview <!-- omit in toc -->
+- [Types of keys](#types-of-keys)
+- [Scenarios for assymmetric keys](#scenarios-for-assymmetric-keys)
+- [Certificate Authority](#certificate-authority)
+  - [Process](#process)
+  - [In depth](#in-depth)
 - [Notes](#notes)
 - [Public key cryptography](#public-key-cryptography)
 - [First step: asymmetric encryption](#first-step-asymmetric-encryption)
@@ -7,10 +12,37 @@
 - [Solution](#solution)
 - [Problem: unauthorized client](#problem-unauthorized-client)
 - [Questions](#questions)
-- [Private key](#private-key)
 - [Articles](#articles)
-  
 
+# Types of keys
+- Assymmetric -> One party can read other party can write
+- Symmetric -> Client / server can read and write
+
+# Scenarios for assymmetric keys
+- Signing (certificates)
+  - Server signs a document with private key
+  - Client uses servers public available public key to decrypt document
+  - Other servers cannot sign documents
+- Encoding
+  - Client uses public key to encode
+  - Server uses private key to decode
+  - Other clients cannot read data
+
+# Certificate Authority
+- Acts to validate the identities of entities
+- Bind them to cryptographic keys through the issuance of electronic documents known as digital certificates
+
+## Process
+- Workstation sends a Certificate Signing request and public key
+- Private key is always kept private
+- CA signs a certificate with own private key
+- Third party can cryptographically confirm the CA's signature via the CA's public key (available in browsers)
+- <img height=200 src="../images/7a76d6af0ac8410d2e63e46f2bcaafcd8eed865e8bce531c81869469b83d6cdd.png"/>
+
+## In depth
+- A a public and private key 
+- Public key wrapped up in a X.509 certificate (client needs both). 
+- Certificate is self signed
 
 # Notes
 - Ensures that traffic is both secure and trusted in both directions between a client and server
@@ -44,13 +76,9 @@
 - Client sends its own certificate and symmetric key
 - <img height=200 src="../images/ef5b5fdb0ef9c8d237b8cd418697ad185132d8383dac191f312956efb9a45d53.png"/>
 
-
 # Questions
 - How validation?
 
-# Private key
-- Validation
-- Compressing
 
 # Articles
 - https://developers.cloudflare.com/access/service-auth/mtls/
