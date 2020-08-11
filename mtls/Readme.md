@@ -11,12 +11,12 @@
 - [Problem: unauthorized server -> man in the middle attack](#problem-unauthorized-server---man-in-the-middle-attack)
 - [Solution](#solution)
 - [Problem: unauthorized client](#problem-unauthorized-client)
-- [Questions](#questions)
+- [Certificate chain](#certificate-chain)
 - [Articles](#articles)
 
 # Types of keys
 - Assymmetric -> One party can read other party can write
-- Symmetric -> Client / server can read and write
+- Symmetric -> Client / server can read and write data
 
 # Scenarios for assymmetric keys
 - Signing (certificates)
@@ -76,11 +76,15 @@
 - Client sends its own certificate and symmetric key
 - <img height=200 src="../images/ef5b5fdb0ef9c8d237b8cd418697ad185132d8383dac191f312956efb9a45d53.png"/>
 
-# Questions
-- How validation?
+# Certificate chain
+- Intermediate certificates has to be sent to client
+- The root ca is installed on machine or in browser
+- The browser will validate the signature with the public key of the higher certificate
+- <img height=200 src="../images/f3771aeaf10f0448db112ecb5081971feee3dec73ae89ab16af696896f9ea3c3.png"/>
 
 
 # Articles
 - https://developers.cloudflare.com/access/service-auth/mtls/
 - https://medium.com/sitewards/the-magic-of-tls-x509-and-mutual-authentication-explained-b2162dec4401
 - https://codeburst.io/mutual-tls-authentication-mtls-de-mystified-11fa2a52e9cf
+- https://security.stackexchange.com/questions/56389/ssl-certificate-framework-101-how-does-the-browser-actually-verify-the-validity
