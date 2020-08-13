@@ -1,10 +1,20 @@
 # Table of contents
 This readme contains a summary of interesting blogs about cloud native
+- [Table of contents](#table-of-contents)
 - [Is Your Cloud Journey Stuck in the Value Gap?](#is-your-cloud-journey-stuck-in-the-value-gap)
+  - [What is a value gap?](#what-is-a-value-gap)
+  - [Common notes](#common-notes)
+  - [How to overcome value gap?](#how-to-overcome-value-gap)
 - [6 Strategies for Migrating Applications to the Cloud](#6-strategies-for-migrating-applications-to-the-cloud)
 - [Your most important architecture decisions might be the ones you didn't know you made.](#your-most-important-architecture-decisions-might-be-the-ones-you-didnt-know-you-made)
 - [Don't build an enterprise non-cloud!](#dont-build-an-enterprise-non-cloud)
+  - [Cloud is not meeting expectations](#cloud-is-not-meeting-expectations)
+  - [Enterprise leaking through cloud](#enterprise-leaking-through-cloud)
+  - [Considerations](#considerations)
 - [Is your platform a Fruit Basket or Fruit Salad?](#is-your-platform-a-fruit-basket-or-fruit-salad)
+  - [Fruit basket](#fruit-basket)
+  - [Fruit salad](#fruit-salad)
+  - [Conclusion](#conclusion)
 
 # Is Your Cloud Journey Stuck in the Value Gap?
 > https://aws.amazon.com/blogs/enterprise-strategy/is-your-cloud-journey-stuck-in-the-value-gap/
