@@ -3,6 +3,7 @@
 - [Architecture](#architecture)
 - [Techniques](#techniques)
 - [Interested](#interested)
+- [Books](#books)
 
 # Architecture
 
@@ -22,3 +23,11 @@
 - https://architectelevator.com/
 - https://www.thoughtworks.com/radar
 - https://blog.webiny.com/
+- Anthos
+
+# Books
+- [ ] Clean architecture - https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164/ref=zg_bs_132555011_1?_encoding=UTF8&psc=1&refRID=9ZPHXW4YDXHQSGWF3TXF
+- [ ] Software enigneering at google - https://www.amazon.com/Software-Engineering-Google-Lessons-Programming-ebook/dp/B0859PF5HB/ref=zg_bs_132555011_6?_encoding=UTF8&psc=1&refRID=ERFP0GJ1JS1GB55QMQMZ
+https://github.com/zudochkin/awesome-newsletters
+- [ ] https://architectelevator.com/book/
+- [ ] https://architectelevator.com/book/cloudstrategy/
