@@ -1,3 +1,5 @@
+# Table of contents
+This readme contains a summary of interesting blogs about cloud native
 - [Is Your Cloud Journey Stuck in the Value Gap?](#is-your-cloud-journey-stuck-in-the-value-gap)
 - [6 Strategies for Migrating Applications to the Cloud](#6-strategies-for-migrating-applications-to-the-cloud)
 - [Your most important architecture decisions might be the ones you didn't know you made.](#your-most-important-architecture-decisions-might-be-the-ones-you-didnt-know-you-made)
@@ -5,12 +7,16 @@
 - [Is your platform a Fruit Basket or Fruit Salad?](#is-your-platform-a-fruit-basket-or-fruit-salad)
 
 # Is Your Cloud Journey Stuck in the Value Gap?
-- https://aws.amazon.com/blogs/enterprise-strategy/is-your-cloud-journey-stuck-in-the-value-gap/
-> Setting an unrealistically high bar will lead to frustration rather than better results.
+https://aws.amazon.com/blogs/enterprise-strategy/is-your-cloud-journey-stuck-in-the-value-gap/
 
-<img height=200 src="images/929b330a6dc95834305c5cb3bb4a62e4ad08b29ebcaeb44a8fad7766039a49d1.png"/>
+## What is a value gap?
+<p align="center"><img src="images/929b330a6dc95834305c5cb3bb4a62e4ad08b29ebcaeb44a8fad7766039a49d1.png"/></p>
 
-> I occasionally still hear arguments that purchasing one large on-premises server is cheaper over three years than a corresponding cloud instance as calculated from the pricing sheet. If your IT organization makes financial comparisons without considering scaling up and down, hardware refreshes, backups, DR, and operational costs, for example, it will underestimate—and under-realize—the value of cloud.
+## Quotes
+- Setting an unrealistically high bar will lead to frustration rather than better results.
+- I occasionally still hear arguments that purchasing one large on-premises server is cheaper over three years than a corresponding cloud instance as calculated from the pricing sheet. If your IT organization makes financial comparisons without considering scaling up and down, hardware refreshes, backups, DR, and operational costs, for example, it will underestimate—and under-realize—the value of cloud.
+
+
 
 **Overcome**
 - Technical evolution and organizational evolution can feed each other in a virtuous cycle. more transparency, perhaps through better metrics, allows better decision-making and optimizing for value generated.
