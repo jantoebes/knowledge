@@ -44,7 +44,7 @@ This readme contains a summary of interesting blogs about cloud native
 |Type|Description |
 |-|-|
 |Rehosting|Lift-and-shift. Can already save costs.Applications are easier to optimize/re-architect once they’re already running in the cloud |
-|Replatforming|lift-tinker-and-shift.make a few cloud (or other) optimizations in order to achieve some tangible benefit, such as licensing costs|
+|Replatforming|lift-tinker-and-shift.make a few cloud (or other) optimizations (like database) in order to achieve some tangible benefit, such as licensing costs|
 |Repurchasing|Moving to a different product.|
 |Refactoring / Re-architecting|Re-imagining how the application is architected and developed, typically using cloud-native features.|
 |Retire|Get rid of. 20% of portfolio is no longer useful|
