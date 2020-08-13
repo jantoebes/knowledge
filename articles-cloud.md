@@ -16,6 +16,8 @@ This readme contains a summary of interesting blogs about cloud native
   - [Fruit salad](#fruit-salad)
   - [Conclusion](#conclusion)
 
+---
+
 # Is Your Cloud Journey Stuck in the Value Gap?
 > https://aws.amazon.com/blogs/enterprise-strategy/is-your-cloud-journey-stuck-in-the-value-gap/
 
@@ -34,6 +36,8 @@ This readme contains a summary of interesting blogs about cloud native
 
 <p align="center"><img height=200 src="images/bb8f902cb371a4d5088b76414b8917d317c0387f6be7d6632165f56b54a1dd79.png"/></p>
 
+---
+
 # 6 Strategies for Migrating Applications to the Cloud
 > https://aws.amazon.com/blogs/enterprise-strategy/6-strategies-for-migrating-applications-to-the-cloud/
 
@@ -46,12 +50,16 @@ This readme contains a summary of interesting blogs about cloud native
 |Retire|Get rid of. 20% of portfolio is no longer useful|
 |Retain|do nothing|
   
+---
+  
 # Your most important architecture decisions might be the ones you didn't know you made.
 > https://architectelevator.com/architecture/important-decisions/
 - The critical decision was already made
 - Beware the Assumptions (lead to non-requirements, those requirements that exist but weren’t documented anywhere)
 - Meaningless as most score cards in IT that represent the end of a long decision tree
 - Conscious Decision Making
+
+---
 
 # Don't build an enterprise non-cloud!
 > https://architectelevator.com/cloud/enterprise-non-cloud/
@@ -82,6 +90,8 @@ The smells when an enterprise is leaking through the cloud
 - Bring cloud to you, not vice versa. Cloud isn’t a classic IT procurement, it’s a fundamental change in IT operating model. Instead, you need to bring some elements of the cloud operating model to your environment.
 - Measurable Goals
 - Segmentation. One cloud size doesn’t fit all. Perhaps for some applications, going straight to the cloud is actually OK, perhaps as long as billing isn’t on Jamie’s credit card.
+
+---
 
 # Is your platform a Fruit Basket or Fruit Salad?
 > https://architectelevator.com/architecture/platforms-fruit-salad/
