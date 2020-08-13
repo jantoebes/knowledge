@@ -31,7 +31,7 @@ This readme contains a summary of interesting blogs about cloud native
 ## How to overcome value gap?
 - Technical evolution and organizational evolution can feed each other in a virtuous cycle. more transparency, perhaps through better metrics, allows better decision-making and optimizing for value generated.
 - From IT Proxy Metrics to Business Metrics
-- From Broad to Deep. In the beginning, you place a few exploratory probes somewhat randomly. Once you score a few hits, you develop a strategy to methodically probe for more insight.
+- From Broad to Deep. Like the game Battleship. In the beginning, you place a few exploratory probes somewhat randomly. Once you score a few hits, you develop a strategy to methodically probe for more insight.
 - It is normal. Shifting gears in a car.
 
 <p align="center"><img height=200 src="images/bb8f902cb371a4d5088b76414b8917d317c0387f6be7d6632165f56b54a1dd79.png"/></p>
