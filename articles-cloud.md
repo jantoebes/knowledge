@@ -46,13 +46,10 @@ This readme contains a summary of interesting blogs about cloud native
 # Don't build an enterprise non-cloud!
 > https://architectelevator.com/cloud/enterprise-non-cloud/
 
-> Good intentions don’t always lead to good results.
->
-> Be careful that your cloud doesn’t become yet another data center
->
-> If you embrace cloud, you should embrace managed services
->
-> If you move all the old junk to a new house, you’ll be living with the same junk.
+- Good intentions don’t always lead to good results.
+- Be careful that your cloud doesn’t become yet another data center
+- If you embrace cloud, you should embrace managed services
+- If you move all the old junk to a new house, you’ll be living with the same junk.
 
 ## Cloud is not meeting expectations
 - Sometimes moving to cloud without a clear strategy 
