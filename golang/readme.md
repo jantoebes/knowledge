@@ -1,21 +1,77 @@
 # Chapter 1: Introduction
 
+
+
+
 - `go run helloworld.go` compile and run
 - `go build helloworld.go` compiles and save compiled result
-- If variable is not explicitly initialized, it is implicitly initialized to the zero value for its type
-- Even the values of a map are default initialized with an empty value
-- Ways to declare variable: <br/> <img height=75 src="../images/3482119a9bcf4a626983afe08ee2c585325ea726459e6c50af8fedd3a7220dbf.png"/>  
 
-Defer
-- A defer statement pushes a function call onto a list. The list of saved calls is executed after the surrounding function returns.
-- This means that when we defer a function, we are guaranteeing it’s execution at the end of its surrounding function.
+# Variables
+- Variables declared without a corresponding initialization are zero-valued. For example, the zero value for an int is 0.
+- Variables do have type inference
+- The `:= syntax` is shorthand for declaring and initializing a variable
 
-Recover
-- Recover is a function provided by Go which takes control of a panicking goroutine. 
-- recover() can only be used inside deferred functions. 
-- If you call recover()during normal flow, it will simply return nil. 
-- However, if a goroutine is panicking, recover()will capture the panic value 
-- To return a value during a panic, you must use a named return value.
+# Constants
+- A numeric constant has no type until it’s given one, such as by an explicit conversion.
+- A number can be given a type by using it in a context that requires one, such as a variable assignment or function call.
 
-Articles
-- https://medium.com/swlh/simple-guide-to-panic-handling-and-recovery-in-golang-72d6181ae3e8
+- For loop has break and continue
+
+# Switch
+- Switch without an expression is an alternate way to express if/else logic.
+```    
+switch {
+case t.Hour() < 12:
+    fmt.Println("It's before noon")
+default:
+    fmt.Println("It's after noon")
+}
+```
+
+# Array
+- Here we create an array a that will hold exactly 5 ints. The type of elements and length are both part of the array’s type. By default an array is zero-valued, which for ints means 0s.
+- You can create multidimensional arrays `var twoD [2][3]int`
+- You can declare and initialize arrays at once `b := [5]int{1, 2, 3, 4, 5}`
+
+# Slice
+- Has no predefined length
+- Supports append, copy
+- Supports range creation
+- Slice operators slices part of array
+
+# Range
+- iterates over elements in a variety of data structures
+
+# Functions
+- When you have multiple consecutive parameters of the same type, you may omit the type name for the like-typed parameters
+- Go requires explicit returns
+- You can return multiple values `func vals() (int, int) `
+- You can have variadic number of arguments `func sum(nums ...int)`
+- A function can return another function
+
+# Pointers vs references
+- Go has pointers, not references
+- Go passes a pointer to an object by value, not an object reference
+- You can overwrite the pointer value which has no impact on the caller
+- In a function specifiy a pointer by `*`
+- `*iptr = 3` replace the value the pointer redirects to
+- `iptr = &another` replace the pointer to another address
+- `return &p` set return value to address
+- `&` is to dereference value
+
+# Structs
+- structs are typed collections of fields
+
+# Methods
+- Sort of extension method
+
+# Interfaces
+- 
+
+- A map is a reference to the data structure created by make. When a map is passed to a function, the function receives a copy of the reference, so any changes the called function makes to the underlying data structure will be visible through the caller’s map reference too.
+- Arguably renaming the type from *map[int]int to map[int]int, while confusing because the type does not look like a pointer, was less confusing than a pointer shaped value which cannot be dereferenced.
+
+Links
+- https://golang.org/doc/effective_go.html
+- https://blog.golang.org/slices-intro
+- https://gobyexample.com/slices
