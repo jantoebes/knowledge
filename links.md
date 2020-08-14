@@ -2,7 +2,8 @@
 
 - [Architecture](#architecture)
 - [Techniques](#techniques)
-- [Interested](#interested)
+- [Interesting websites](#interesting-websites)
+- [Interesting technologies](#interesting-technologies)
 - [Books](#books)
 
 # Architecture
@@ -18,12 +19,14 @@
 - [ ] https://www.tensorflow.org/tutorials
 - [ ] https://scala.monster/welcome-zio/
 
-# Interested
+# Interesting websites
 
 - https://architectelevator.com/
 - https://www.thoughtworks.com/radar
 - https://blog.webiny.com/
-- Anthos
+
+# Interesting technologies
+- [ ] Anthos
 
 # Books
 - [ ] Clean architecture - https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164/ref=zg_bs_132555011_1?_encoding=UTF8&psc=1&refRID=9ZPHXW4YDXHQSGWF3TXF
