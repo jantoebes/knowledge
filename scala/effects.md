@@ -1,8 +1,3 @@
-# Notes
-- `Thunk` is a pointer to a function that executes some code, and it’s a way to make the execution of some code lazy. Fi. `sideEffect: => A`
-- `M suffix` is used to identify effectful version of some method
-- Functional programming is based on the simple premise that your functions should not have side effects; they are considered evil in this paradigm. If a function has side effects we call it a `procedure`, so functions do not have side effects.
-
 # Effects vs side effects
 > https://levelup.gitconnected.com/what-is-effect-or-effectful-mean-in-functional-programming-7fc7323b52b4
 > https://alvinalexander.com/scala/what-effects-effectful-mean-in-functional-programming/
