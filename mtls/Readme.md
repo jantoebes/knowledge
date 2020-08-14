@@ -1,5 +1,6 @@
 # Overview <!-- omit in toc -->
-- [](#)
+This document will give an overview of all the insights that I have about (mutual) TLS.  
+
 - [Types of keys](#types-of-keys)
 - [Scenarios for assymmetric keys](#scenarios-for-assymmetric-keys)
 - [Certificate Authority](#certificate-authority)
@@ -27,10 +28,10 @@ When sending a message between two parties you have two problems that you need t
 # Types of keys
 The following types of cryptomatic keys are
 - Assymmetric -> One party can read other party can write
-- Symmetric -> Client / server can read and write data
+- Symmetric -> Client / server can read and write data (faster)
 
 # Scenarios for assymmetric keys
-There are two scenarios for using ssymmetric keys:
+There are two scenarios for using assymmetric keys:
 - Signing: *One sign, Many validates*
   - Server signs a document with private key
   - Client uses servers public available public key to decrypt document
