@@ -118,3 +118,14 @@ fn main() {
 - Using Mutexes to Allow Access to Data from One Thread at a Time
 - a mutex allows only one thread to access some data at any given time.
 - 
+
+# Go vs rust
+Choose Rust when:
+- If performance is a necessity 
+- If you want it to interoperate with C language. 
+- When your developers need control on every detail of how the threads behave with the rest of the system, how the errors must be handled, it would be better to look into Rust use cases.  
+
+Choose Go when:
+- If readability is a must have requirement 
+- If you wish to write codes faster
+- If the focus is on uniformity and simplicity. 
