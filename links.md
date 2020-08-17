@@ -18,6 +18,7 @@
 
 - [ ] https://www.tensorflow.org/tutorials
 - [ ] https://scala.monster/welcome-zio/
+- [ ] https://github.com/ghostdogpr/zio-cheatsheet
 
 # Interesting websites
 
