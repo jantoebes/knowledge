@@ -1,10 +1,7 @@
-# Chapter 1: Introduction
-
-
-
-
-- `go run helloworld.go` compile and run
-- `go build helloworld.go` compiles and save compiled result
+Links
+- https://gobyexample.com/
+- https://golang.org/doc/effective_go.html
+- https://blog.golang.org/slices-intro
 
 # Variables
 - Variables declared without a corresponding initialization are zero-valued. For example, the zero value for an int is 0.
@@ -59,6 +56,19 @@ default:
 - `return &p` set return value to address
 - `&` is to dereference value
 
+The `&` operator generates a pointer to its operand.
+
+```go
+i := 42
+p = &i
+```
+
+The `*` operator denotes the pointer's underlying value.
+```go
+fmt.Println(*p) // read i through the pointer p
+*p = 21         // set i through the pointer p
+```
+
 # Structs
 - structs are typed collections of fields
 
@@ -66,12 +76,45 @@ default:
 - Sort of extension method
 
 # Interfaces
-- 
-
 - A map is a reference to the data structure created by make. When a map is passed to a function, the function receives a copy of the reference, so any changes the called function makes to the underlying data structure will be visible through the caller’s map reference too.
 - Arguably renaming the type from *map[int]int to map[int]int, while confusing because the type does not look like a pointer, was less confusing than a pointer shaped value which cannot be dereferenced.
 
-Links
-- https://golang.org/doc/effective_go.html
-- https://blog.golang.org/slices-intro
-- https://gobyexample.com/slices
+# Errors
+- By convention, `func f1(arg int) (int, error)` errors are the last type
+- It’s possible to use custom types as errors by implementing the Error() method on them
+
+# Goroutines / channels
+- Goroutine is lightweight thread of execution
+- `go f("goroutine")`
+- Send a value into a channel using the `channel <- syntax`
+- Receive a value from a channel via `msg := <-messages`
+- By default sends and receives block until both the sender and receiver are ready.
+    - Buffered channels: accept a limited number of values without a corresponding receiver for those values
+    - Channel synchronization: 
+```go
+func worker(done chan bool) {
+    fmt.Print("working...")
+    time.Sleep(time.Second)
+    fmt.Println("done")
+    done <- true
+}
+```
+    - Direction `pings <-chan string` is receiving
+    - Direction `pongs chan<- string` is sending
+
+ # Timeouts
+ ```go
+select {
+case res := <-c2:
+    fmt.Println(res)
+case <-time.After(3 * time.Second):
+    fmt.Println("timeout 2")
+}
+```
+
+# Other
+- Ticker for repeatedly intervals
+- Waitgroup to wait for multiple goroutines
+- Use `atomic counters` to add numbers from differen goroutines
+- Lock() the `mutex` to ensure exclusive access to the state, read the value at the chosen key, Unlock() the mutex
+- 

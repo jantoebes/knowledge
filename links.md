@@ -13,6 +13,7 @@
 - [x] [The Architect Elevator — Visiting the upper floors](https://martinfowler.com/articles/architect-elevator.html)
 - [ ] [Cloud: beyond infrastructure thinking](https://www.thoughtworks.com/insights/articles/cloud-beyond-infrastructure-thinking)
 - [ ] [Macro trends in the tech industry](https://www.thoughtworks.com/insights/blog/macro-trends-tech-industry-may-2020)
+- [x] [State of frontend](https://tsh.io/state-of-frontend/)
 - [ ] https://martinfowler.com/articles/patterns-of-distributed-systems/
 - [ ] https://aatishb.com/entropy/
 
