@@ -31,9 +31,9 @@ val result: IO[Throwable, Option[(User, Team)]] = (for {
 } yield (user, team)).optional 
 ```
 
-`.some` converts option of value to option of error 
-`.asSomeError` maps error (throwable) to option (some)
-`optional` converts option of error to option of value
+- `.some` converts option of value to option of error 
+- `.asSomeError` maps error (throwable) to option (some)
+- `optional` converts option of error to option of value
 
 # Function
 A function A => B can be converted into a ZIO effect
@@ -65,7 +65,8 @@ val login: IO[AuthError, User] =
 ## Blocking Synchronous Side-Effects
 - Use `zio.blocking` package with `effectBlocking` or `blocking`
 - The resulting effect will be executed on a separate thread pool designed specifically for blocking effects.
-
+- With `blocking` the zio side effect will be executed on a different thread pool
+  
 ```scala
 val sleeping =
   effectBlocking(Thread.sleep(Long.MaxValue))
@@ -82,3 +83,43 @@ def download(url: String) =
 def safeDownload(url: String) =
   blocking(download(url))
 ```
+
+# Basic operations
+- Zipping: the effect on the left side is executed before the effect on the right side
+- Symbolic alias `*>` and `<*` for zipLeft/zipRight
+
+# Handling errors
+- `ZIO.absolve` turns `ZIO[R, Nothing, Either[E, A]]` into a `ZIO[R, E, A]`
+- `catchAll` vs `orElse`: with catchAll you get the error
+- `fold` handles you succes and/or error
+
+# Retry
+- `.retry(Schedule...)` when failed
+- `retryOrElse` retry and if that is not successful do something else
+  
+# Resource handling
+- `ensuring` guarantees that an effects uses a finalizer
+- `bracket` acquire effect; a release effect, and a use effect
+
+# Concurrency
+
+|Type|Description|Comment|
+|-|-|-|
+|Thread|Preemptive. Threads do not decide when to run and are forced to share the CPU. Scheduler (OS components) decides at any moment which thread can run and which has to sleep|Data integrity is a big issue because one thread may be stopped in the middle of updating a chunk of data. Operating system can take advantage of multiple CPUs and CPU cores by running more than one thread at the same time and leaving it up to the developer to guard data access|
+|Fiber|Cooperative. Each thread, once running decides for how long to keep the CPU, and (crucially) when it is time to give it up so that another thread can use it|Fibers always start and stop in well-defined places, so data integrity is much less of an issue.Expensive context switches and CPU state changes need not be made.Will not take advantage of multiple CPUs or multiple CPU cores (nodejs)|
+|Green thread|Scheduled by a virtual machine(VM) instead of natively. Enables multithreaded environemnts without relying on native OS||
+![picture 1](../images/8e0e095aba7142a00f9904695407f4e936fb07ac8f2f3de0b49b5dfe2f1ee008.png)  
+
+ZIO fiber
+- Consume almost no memory, have growable and shrinkable stacks, don't waste resources blocking, and will be garbage collected automatically
+- Enables multitasking, even when operating in a single-threaded environment 
+
+- `fork` executing on new fiber
+- `join` get return value of the fiber
+- `await` get information how the fiber completed
+- `interrupt` kill fiber. you can fork interruption to continu without getting outcome
+- `race` get first value
+- `timout` option to return 
+![picture 2](../images/ac6421695395d190ede4c9ce0c68d8763afc2748e78b586a675d996a78fa32b5.png)  
+
+
