@@ -1,7 +1,6 @@
 # Roadmap
 
 - [ ] Read ZIO + Scala monster
-- [ ] Motivation article
 - [ ] Toebes.info with netlify/gatsby/package of zio (jamstack)
 - [ ] Rust
 - [ ] Kubernetes raspberry pi
