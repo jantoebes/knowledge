@@ -108,9 +108,10 @@ def safeDownload(url: String) =
 |Thread|Preemptive. Threads do not decide when to run and are forced to share the CPU. Scheduler (OS components) decides at any moment which thread can run and which has to sleep|Data integrity is a big issue because one thread may be stopped in the middle of updating a chunk of data. Operating system can take advantage of multiple CPUs and CPU cores by running more than one thread at the same time and leaving it up to the developer to guard data access|
 |Fiber|Cooperative. Each thread, once running decides for how long to keep the CPU, and (crucially) when it is time to give it up so that another thread can use it|Fibers always start and stop in well-defined places, so data integrity is much less of an issue.Expensive context switches and CPU state changes need not be made.Will not take advantage of multiple CPUs or multiple CPU cores (nodejs)|
 |Green thread|Scheduled by a virtual machine(VM) instead of natively. Enables multithreaded environemnts without relying on native OS||
+
 ![picture 1](../images/8e0e095aba7142a00f9904695407f4e936fb07ac8f2f3de0b49b5dfe2f1ee008.png)  
 
-ZIO fiber
+## ZIO fiber
 - Consume almost no memory, have growable and shrinkable stacks, don't waste resources blocking, and will be garbage collected automatically
 - Enables multitasking, even when operating in a single-threaded environment 
 
@@ -122,4 +123,60 @@ ZIO fiber
 - `timout` option to return 
 ![picture 2](../images/ac6421695395d190ede4c9ce0c68d8763afc2748e78b586a675d996a78fa32b5.png)  
 
+# Testing effects
 
+- ZIO effects can access the environment using `ZIO.environment`, which provides direct access to the environment, as a value of `type R`
+- Get a part of the environment via `ZIO.access[Config](_.server)`
+- Get part of the environment via effect `ZIO.accessM[DatabaseOps](_.getTableNames)`
+- Provide environment via `provide` 
+- 
+
+```scala
+val square: URIO[Int, Int] = 
+  for {
+    env <- ZIO.environment[Int]
+  } yield env * env
+
+val result: UIO[Int] = square.provide(42)
+```
+
+# Effect pattern
+## Create service
+```scala
+object Database {
+  trait Service {
+    def lookup(id: UserID): Task[UserProfile]
+    def update(id: UserID, profile: UserProfile): Task[Unit]
+  }
+}
+trait Database {
+  def database: Database.Service
+}
+```
+
+## Provide helpers
+```scala
+object db {
+  def lookup(id: UserID): RIO[Database, UserProfile] =
+    ZIO.accessM(_.database.lookup(id))
+
+  def update(id: UserID, profile: UserProfile): RIO[Database, Unit] =
+    ZIO.accessM(_.database.update(id, profile))
+}
+```
+
+## Use the service
+```scala
+val lookedupProfile: RIO[Database, UserProfile] = 
+  for {
+    profile <- db.lookup(userId)
+} yield profile
+```
+
+## Implement service
+```scala
+val lookedupProfile: RIO[Database, UserProfile] = 
+  for {
+    profile <- db.lookup(userId)
+  } yield profile
+```

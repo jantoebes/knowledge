@@ -5,6 +5,7 @@
 - [Interesting websites](#interesting-websites)
 - [Interesting technologies](#interesting-technologies)
 - [Books](#books)
+- [Articles](#articles)
 
 # Architecture
 
@@ -38,3 +39,7 @@
 https://github.com/zudochkin/awesome-newsletters
 - [ ] https://architectelevator.com/book/
 - [ ] https://architectelevator.com/book/cloudstrategy/
+
+
+# Articles
+- [ ] https://aws.amazon.com/blogs/opensource/building-resilient-services-at-prime-video-with-chaos-engineering/
