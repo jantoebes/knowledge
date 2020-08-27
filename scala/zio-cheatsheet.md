@@ -1,7 +1,12 @@
-# ZIO Cheat Sheet
-
-- This is based on [ZIO](https://github.com/scalaz/scalaz-zio) 1.0.0-RC18.
-- For simplicity, ZIO environment has been omitted but all the functions also work with the form `ZIO[R, E, A]`.
+# ZIO Cheat Sheet <!-- omit in toc -->
+- [Aliases](#aliases)
+- [Creating effects](#creating-effects)
+- [Transforming effects](#transforming-effects)
+- [Recover from errors](#recover-from-errors)
+- [Terminate fiber with errors](#terminate-fiber-with-errors)
+- [Combining effects + parallelism](#combining-effects--parallelism)
+- [Finalizers](#finalizers)
+- [Timing](#timing)
 
 ## Aliases
 

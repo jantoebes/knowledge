@@ -1,5 +1,13 @@
-> https://aleksandarskrbic.github.io/functional-effects-with-zio/
+# Effects in ZIO  <!-- omit in toc -->
+- [Summary](#summary)
+- [Effect](#effect)
+- [Side effect](#side-effect)
+- [Access vs accessm](#access-vs-accessm)
+- [OrDie](#ordie)
+- [UnsafeRun](#unsaferun)
+- [Resources](#resources)
 
+## Summary
 - `Thunk` is a pointer to a function that executes some code, and it’s a way to make the execution of some code lazy. Fi. `sideEffect: => A`
 - Functional programming is based on the simple premise that your functions should not have side effects; they are considered evil in this paradigm. If a function has side effects we call it a `procedure`, so functions do not have side effects.
 
@@ -30,7 +38,7 @@ def accessM[R, E, A](f: R => ZIO[R, E, A]): ZIO[R, E, A] =
     ZIO(r => f(r).run(r))
 ```
 
-# OrDie
+## OrDie
 ```scala
 def orDie(implicit ev: E <:< Throwable): ZIO[R, Nothing, A] =
     ZIO(r => self.run(r).fold(throw _, Right(_)))
@@ -55,3 +63,6 @@ Used for main functions
 def main(args: Array[String]): Unit =
     unsafeRun(program)
 ```
+
+## Resources
+- https://aleksandarskrbic.github.io/functional-effects-with-zio/

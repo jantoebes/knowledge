@@ -6,8 +6,14 @@ This readme contains a summary of interesting blogs about architecture
 ---
 
 # Resilence in deep systems
-> https://www.infoq.com/articles/resilience-deep-systems
+- https://www.infoq.com/articles/resilience-deep-systems
 
+Articles
+- [Don't get locked up into avoiding lock-in](https://martinfowler.com/articles/oss-lockin.html)
+- [Failure doesn’t respect abstraction](https://architectelevator.com/architecture/failure-doesnt-respect-abstraction)
+- [The Architect Elevator — Visiting the upper floors](https://martinfowler.com/articles/architect-elevator.html)
+
+Other
 - The `depth of a system` can be considered as the number of microservices layers in the application stack.
 
 3 ingredients that can help you nourish resilience in deep systems

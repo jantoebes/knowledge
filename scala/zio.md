@@ -1,6 +1,17 @@
-> https://zio.dev/docs/overview/overview_index
-
-# Type aliases
+# ZIO  <!-- omit in toc -->
+- [Type aliases](#type-aliases)
+- [Creating effects](#creating-effects)
+- [OptionT equivalent](#optiont-equivalent)
+- [Function](#function)
+- [Side effects (not zio effects)](#side-effects-not-zio-effects)
+- [Basic operations](#basic-operations)
+- [Handling errors](#handling-errors)
+- [Retry](#retry)
+- [Resource handling](#resource-handling)
+- [Concurrency](#concurrency)
+- [Testing effects](#testing-effects)
+- [Effect pattern](#effect-pattern)
+## Type aliases
 
 |Type|Alias|Description|
 |-|-|-|
@@ -12,11 +23,11 @@
 
 - Direct use of the ZIO data type is possible, although you may find it useful to create your own family of type aliases in different parts of your application.
 
-# Creating effects
+## Creating effects
 - `succeed` is intended for values which do not have any side effects
 - If you know that your value does have side effects consider using ZIO.`effectTotal` for clarity. The value inside a successful effect constructed with ZIO.effectTotal will only be constructed if absolutely required.
 
-# OptionT equivalent
+## OptionT equivalent
 
 ```scala
 val maybeId: IO[Option[Nothing], String] = ZIO.fromOption(Some("abc123"))
@@ -35,22 +46,22 @@ val result: IO[Throwable, Option[(User, Team)]] = (for {
 - `.asSomeError` maps error (throwable) to option (some)
 - `optional` converts option of error to option of value
 
-# Function
+## Function
 A function A => B can be converted into a ZIO effect
 ```scala
 val zfun: URIO[Int, Int] =
   ZIO.fromFunction((i: Int) => i * i)
 ```
 
-# Side effects (not zio effects)
+## Side effects (not zio effects)
 
-## Synchronous
+### Synchronous
 - With `ZIO.effect` when throw exceptions
 - With `ZIO.effectTotal` when not throw exceptions
 - Prefer `effect` instead of `effectTotal` when in doubt
 - You use `refineToOrDie` to treat the other errors as fatal
 
-## Asynchronous
+### Asynchronous
 - Use `effectAsync`
 ```scala
 val login: IO[AuthError, User] =
@@ -62,7 +73,7 @@ val login: IO[AuthError, User] =
   }
 ```
 
-## Blocking Synchronous Side-Effects
+### Blocking Synchronous Side-Effects
 - Use `zio.blocking` package with `effectBlocking` or `blocking`
 - The resulting effect will be executed on a separate thread pool designed specifically for blocking effects.
 - With `blocking` the zio side effect will be executed on a different thread pool
@@ -84,24 +95,24 @@ def safeDownload(url: String) =
   blocking(download(url))
 ```
 
-# Basic operations
+## Basic operations
 - Zipping: the effect on the left side is executed before the effect on the right side
 - Symbolic alias `*>` and `<*` for zipLeft/zipRight
 
-# Handling errors
+## Handling errors
 - `ZIO.absolve` turns `ZIO[R, Nothing, Either[E, A]]` into a `ZIO[R, E, A]`
 - `catchAll` vs `orElse`: with catchAll you get the error
 - `fold` handles you succes and/or error
 
-# Retry
+## Retry
 - `.retry(Schedule...)` when failed
 - `retryOrElse` retry and if that is not successful do something else
   
-# Resource handling
+## Resource handling
 - `ensuring` guarantees that an effects uses a finalizer
 - `bracket` acquire effect; a release effect, and a use effect
 
-# Concurrency
+## Concurrency
 
 |Type|Description|Comment|
 |-|-|-|
@@ -111,10 +122,11 @@ def safeDownload(url: String) =
 
 ![picture 1](../images/8e0e095aba7142a00f9904695407f4e936fb07ac8f2f3de0b49b5dfe2f1ee008.png)  
 
-## ZIO fiber
+### ZIO fiber
 - Consume almost no memory, have growable and shrinkable stacks, don't waste resources blocking, and will be garbage collected automatically
 - Enables multitasking, even when operating in a single-threaded environment 
 
+Actions
 - `fork` executing on new fiber
 - `join` get return value of the fiber
 - `await` get information how the fiber completed
@@ -123,13 +135,13 @@ def safeDownload(url: String) =
 - `timout` option to return 
 ![picture 2](../images/ac6421695395d190ede4c9ce0c68d8763afc2748e78b586a675d996a78fa32b5.png)  
 
-# Testing effects
+## Testing effects
 
 - ZIO effects can access the environment using `ZIO.environment`, which provides direct access to the environment, as a value of `type R`
 - Get a part of the environment via `ZIO.access[Config](_.server)`
 - Get part of the environment via effect `ZIO.accessM[DatabaseOps](_.getTableNames)`
 - Provide environment via `provide` 
-- 
+
 
 ```scala
 val square: URIO[Int, Int] = 
@@ -140,8 +152,8 @@ val square: URIO[Int, Int] =
 val result: UIO[Int] = square.provide(42)
 ```
 
-# Effect pattern
-## Create service
+## Effect pattern
+### Create service
 ```scala
 object Database {
   trait Service {
@@ -154,7 +166,7 @@ trait Database {
 }
 ```
 
-## Provide helpers
+### Provide helpers
 ```scala
 object db {
   def lookup(id: UserID): RIO[Database, UserProfile] =
@@ -165,7 +177,7 @@ object db {
 }
 ```
 
-## Use the service
+### Use the service
 ```scala
 val lookedupProfile: RIO[Database, UserProfile] = 
   for {
@@ -173,10 +185,13 @@ val lookedupProfile: RIO[Database, UserProfile] =
 } yield profile
 ```
 
-## Implement service
+### Implement service
 ```scala
 val lookedupProfile: RIO[Database, UserProfile] = 
   for {
     profile <- db.lookup(userId)
   } yield profile
 ```
+
+### Resources
+- https://zio.dev/docs/overview/overview_index

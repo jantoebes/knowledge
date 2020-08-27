@@ -1,7 +1,12 @@
-# Covariance
+# Co/contravariance <!-- omit in toc -->
+
+- [Covariance](#covariance)
+- [Contravariance](#contravariance)
+
+## Covariance
 - Allow lower types. Simple.
   
-# Contravariance
+## Contravariance
 - Serialization function. Allows serializers for higher types, but then not all properties will be serialized
 - Sorting function. 
 - Pattern is that it is never on case classes, but most of time on functions that work with case classes

@@ -1,3 +1,7 @@
+# Articles
+- [x] [State of frontend](https://tsh.io/state-of-frontend/)
+
+
 # Interesting components
 - https://github.com/ealush/vest Vest describes your form validation declarative and is framework agnostic
 - https://github.com/denoland/deno Javascript scripting instead of nodejs (better api)
