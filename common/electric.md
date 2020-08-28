@@ -1,4 +1,10 @@
 ## Overview
+Twee verschillende aspecten op het gebied van electiciteit
+- Lading
+- Energie (per lading)
+
+`Vermogen is de combinatie van de hoeveelheid lading per seconde en de hoeveelheid energie per lading er door een circuit stroomt`
+
 |Wat|Engels|Eenheid|Synoniem|||
 |-|-|-|-|-|-|
 |Stroom|Current|Ampere|Coulomb per seconde|Hoeveel electrische lading (coulomb) zich per seconde verplaatst|Als we de kraan opendraaien, begint het water te stromen. De waterstroom is te vergelijken met elektrische ‘stroom’|
