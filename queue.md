@@ -20,6 +20,7 @@ All the blogs and articles that are on queue to read
 - [ ] https://www.thoughtworks.com/radar
 - [ ] https://blog.webiny.com/
 - [ ] https://www.tutorialspoint.com/
+- [ ] https://www.infoq.com/presentations/engineering-culture-business-impact/?utm_source=email&utm_medium=culture-methods&utm_campaign=newsletter&utm_content=08252020
 
 # Queue books
 - [ ] Clean architecture - https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164/ref=zg_bs_132555011_1?_encoding=UTF8&psc=1&refRID=9ZPHXW4YDXHQSGWF3TXF
@@ -27,3 +28,4 @@ All the blogs and articles that are on queue to read
 https://github.com/zudochkin/awesome-newsletters
 - [ ] https://architectelevator.com/book/
 - [ ] https://architectelevator.com/book/cloudstrategy/
+- [ ] https://tailwindcss.com/
