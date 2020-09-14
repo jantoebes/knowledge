@@ -1,12 +1,21 @@
 # Table of contents
 This readme contains a summary of interesting blogs about architecture
 - [Table of contents](#table-of-contents)
+- [Attention is your scarcest resource](#attention-is-your-scarcest-resource)
 - [How to stop procrastinating by using the Fogg Behavior Model](#how-to-stop-procrastinating-by-using-the-fogg-behavior-model)
   - [Motivation](#motivation)
   - [Ability](#ability)
   - [Trigger](#trigger)
 
----
+
+# Attention is your scarcest resource
+https://www.benkuhn.net/attention/?utm_source=hackernewsletter&utm_medium=email&utm_term=fav
+
+- Care viscerally (inner motivation)
+- Monotask
+- Evade obligation
+- Timebox bullshit
+
 
 # How to stop procrastinating by using the Fogg Behavior Model
 > https://www.deprocrastination.co/blog/how-to-stop-procrastinating-by-using-the-fogg-behavior-model
