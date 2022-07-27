@@ -1,5 +1,23 @@
 # ZLayer <!-- omit in toc -->
 
+ZLayer => Module principe
+ZManaged => Resource acquisition
+
+
+- https://blog.softwaremill.com/zio-environment-meets-constructor-based-dependency-injection-6a13de6e000
+- https://zio.dev/docs/howto/howto_use_layers
+
+- Individual instances of the dependencies can be accessed through the `ZIO.access(f: R => A): ZIO[R, Nothing, A]` method
+- Either making dependencies explicit or keeping them hidden, is what differentiates the two approaches
+
+- A module (zlayer) is a group of functions that deals with only one concern
+
+- What's the use of Has if the resulting type is just a mix of two traits? Why aren't we just relying on trait mixins?
+
+- it is extremely convenient to define a type alias for Has[Service]
+
+
+
 # Resources
 - https://scala.monster/
 - https://github.com/wix/greyhound
